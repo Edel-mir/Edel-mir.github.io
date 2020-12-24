@@ -17,7 +17,8 @@ btn.onclick = function () {
     }
     let str = String(top / bottom).slice(0, 4);
     if (str === NaN){
-        str = "Неверные данные";
+        ans.innerHTML = "Неверные данные";
+    } else {
+        ans.innerHTML = "Ответ: " + str;
     }
-    ans.innerHTML = "Ответ: " + str;
 }
