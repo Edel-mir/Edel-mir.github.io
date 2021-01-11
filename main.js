@@ -1,10 +1,10 @@
 "use strict";
-let btn = document.querySelector(".btn");
-let ans = document.querySelector(".answer h1");
+let btn = document.querySelector("#submit");
+let ans = document.querySelector("#answer h2");
 
 btn.onclick = function () {
-    let inputs = document.querySelectorAll(".textbox input");
-    let selects = document.querySelectorAll(".textbox select");
+    let inputs = document.querySelectorAll(".form-control");
+    let selects = document.querySelectorAll(".form-select");
     let top = 0;
     let bottom = 0;
     for (let i = 0; i < 10; i++) {
@@ -15,10 +15,10 @@ btn.onclick = function () {
             bottom += cr;
         }
     }
-    let str = String(top / bottom).slice(0, 4);
-    if (str === NaN){
-        ans.innerHTML = "Неверные данные";
+    let a = String(top / bottom).slice(0, 4)
+    if (a === NaN){
+        ans.innerHTML = "Ошибка";
     } else {
-        ans.innerHTML = "Ответ: " + str;
-    }
+        ans.innerHTML = a;
+    } 
 }
